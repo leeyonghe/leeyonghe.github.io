@@ -47,7 +47,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span><br>
+            <span>(I'm working for <span id="myyear">18</span> years)</span>
+          </a>
         </li>
 
         <!-- Divider -->
@@ -1139,8 +1141,24 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
+  <script>
+      $(document).ready(function(){
+        
+        function diff_years(dt2, dt1) {
 
-  
+          var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+          diff /= (60 * 60 * 24);
+          return Math.abs(Math.round(diff/365.25));
+        }
+
+        dt1 = new Date(2003,1,1);
+        dt2 = new Date();
+
+        $('#myyear').html(diff_years(dt1, dt2))
+
+      });
+
+  </script>
 
 </body>
 
