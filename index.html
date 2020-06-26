@@ -19,6 +19,20 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <style>
+    @keyframes rotation {
+      0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+      }
+      50% {
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+      100% {
+        transform: rotate3d(0, 1, 0, 360deg);
+      }
+    }       
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -33,9 +47,14 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-          <div class="sidebar-brand-icon rotate-n-15">
+          <div class="sidebar-brand-icon rotate-n-0">
             <!-- <i class="fas fa-laugh-wink"></i> -->
-            <img class="img-profile rounded-circle" src="./img/myicon.png" style="width: 60px;height: 60px;">
+            <img class="img-profile rounded-circle" src="./img/myicon.png" style="width: 60px;height: 60px;animation-name: rotation;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 5.5s;
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;">
           </div>
           <div class="sidebar-brand-text mx-3">David Lee</div>
         </a>
